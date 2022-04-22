@@ -1,11 +1,6 @@
 #include"push_swap.h"
 
 
-int	main(int argc, char	*argv[])
-{
-	if(check_sort(stack_a) == 1)
-		exit(0);
-}
 
 int check_sort(t_stack	*stack_a)
 {
