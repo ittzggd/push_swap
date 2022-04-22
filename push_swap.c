@@ -1,7 +1,7 @@
 #include"push_swap.h"
 
 
-int	main()
+int	main(int argc, char	*argv[])
 {
 	if(check_sort(stack_a) == 1)
 		exit(0);
@@ -37,11 +37,37 @@ int	sort_stack(t_stack	*stack_a)
 	num = 0
 	stack_b = create_stack();
 	chunk = get_chunk(stack_a->current_element_count);
-	if
-
-
+	from_a_to_b(stack_a, stack_b, chunk);
 }
 
+void	from_a_to_b(t_stack *stack_a, t_stack *stack_b, int chunk)
+{
+	int				num;
+	t_stack_node	*top
+
+	if(stack_a == NULL || stack_b == NULL)
+		ft_error();
+	num = 0;
+	top = stack_a->header_node.next;
+	while(stack_a->curr_element_count > 0)
+	{
+		if(top->index <= num)
+		{
+			pb(stack_a, stack_b);
+			num++;
+		}
+		else if((num < top->index) && (top <= num + chunk))
+		{
+			pb(stack_a, stack_b);
+			rb(stack_b);
+			num++;
+		}
+		else if(num + chunk < top->index)
+		{
+			ra(stack_a);
+		}
+	}
+}
 int	get_chunk(int element_count)
 {
 	int	chunk;

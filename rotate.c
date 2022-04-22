@@ -2,15 +2,17 @@
 
 int	rotate(t_stack *stack)
 {
+	t_stack_node	*head;
 	t_stack_node	*top;
 
 	if(stack == NULL)
 		ft_error();
 	if(stack->current_element_count < 2)
 		return (0);
-	top = stack->header_node->next;
-	header_node->prev = top;
-	header_node->next = top->next;
+	head = &stack->header_node;
+	top = head->next;
+	head->prev = top;
+	head->next = top->next;
 	return (1);
 }
 

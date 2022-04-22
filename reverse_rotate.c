@@ -2,15 +2,17 @@
 
 int	reverse_rotate(t_stack	*stack)
 {
+	t_stack_node	*head;
 	t_stack_node	*bottom;
 
 	if(stack == NULL)
 		ft_error();
 	if(stack->current_element_count < 2)
 		return (0);
-	bottom = stack->header_node->prev;
-	header_node->next = bottom;
-	header_node->next = bottom->prev;
+	head = &stack->header_node
+	bottom = head->prev;
+	head->next = bottom;
+	head->next = bottom->prev;
 	return (1); 
 }
 

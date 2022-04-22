@@ -8,7 +8,7 @@ int	swap(t_stack *stack)
 
 	if(stack == NULL)
 		ft_error();
-	head = stack->header_node;
+	head = &stack->header_node;
 	top = head->next;
 	swap = top->next;
 	if(stack->current_element_count < 2)
